@@ -11,14 +11,15 @@ import (
 	"github.com/go-redis/redis/v8"
 )
 
-var ctx = context.Background()
-
-func main() {
-	// Initialize a Redis client.
-	rdb := redis.NewClient(&redis.Options{
+var (
+	ctx = context.Background()
+	rdb = redis.NewClient(&redis.Options{
 		Addr: os.Getenv("REDIS_HOST"), // Redis server address host:port
 		DB:   0,                       // Default DB
 	})
+)
+
+func main() {
 
 	// Initialize Gin.
 	router := gin.Default()
