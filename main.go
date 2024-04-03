@@ -62,3 +62,7 @@ func main() {
 		panic(err)
 	}
 }
+
+func Addition(a, b int) int {
+	return a + b
+}
